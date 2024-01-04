@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Helvetica, Arial, sans-serif;
+
+        }
+
+
+        main {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            padding: 100px 112px 0;
+            background-color: #f0f2f5;
+
+
+        }
+
+        main>* {
+            /* outline: 1px dashed #6200ff; */
+            height: 100%;
+            width: auto;
+
+
+        }
+
+        .F1 {
+
+            margin: 0 auto;
+            padding: 20px 0;
+            width: 980px;
+            height: auto;
+            /* outline: 1px dashed #00ff15; */
+
+        }
+
+        .F1>* {
+            /* outline: 1px dashed #d13925; */
+        }
+
+        .F2 {
+
+            display: flex;
+            height: 100%;
+            flex-wrap: wrap;
+        }
+
+        .F2>* {
+            /* outline: 1px dashed #6200ff; */
+            flex: 1;
+        }
+
+        .main-L {
+            flex-basis: 100px;
+            display: flex;
+            flex-flow: column;
+            flex-grow: 1;
+
+        }
+
+        .main-L>img {
+            width: 280px;
+        }
+
+        .main-L>h2 {
+            padding: 0 28px;
+            font-size: 28px;
+            font-weight: normal;
+        }
+
+        .main-R {
+            flex-basis: 100px;
+            display: flex;
+            flex-grow: 1;
+            justify-content: center;
+
+        }
+
+        .inputuser {
+            direction: ltr;
+            text-align: center;
+            box-shadow: none;
+
+        }
+
+        .R1 {
+            text-align: center;
+        }
+
+        .R2 {
+            color: #1c1e21;
+            direction: ltr;
+            line-height: 1.34;
+            font-size: 12px;
+            align-items: center;
+            background-color: #fff;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+            box-sizing: border-box;
+            margin: 40px 0 0;
+            padding: 20px 0 28px;
+            width: 396px;
+            text-align: center;
+            padding-bottom: 24px;
+            padding-top: 10px;
+            font-family: inherit;
+        }
+
+        .inputbox {
+            color: #1c1e21;
+            background-color: #fff;
+            direction: ltr;
+            line-height: 1.34;
+            text-align: center;
+            display: inline-block;
+            margin: auto;
+            padding: 6px 0;
+            font-size: 17px;
+            width: 364px;
+            font-family: inherit;
+        }
+
+        .email>input {
+
+            margin: 5px;
+            background-color: #fff;
+            color: #1d2129;
+            height: 22px;
+            line-height: 16px;
+            vertical-align: middle;
+            border-radius: 6px;
+            background: none;
+            border: 0;
+            box-shadow: none;
+            float: left;
+            font-size: 17px;
+            padding: 0;
+            width: 300px;
+            font-family: inherit;
+        }
+
+        .email {
+            margin: 5px;
+            padding: 10px 16px;
+            border: 1px solid #dddfe2;
+            height: 50px;
+            border-radius: 6px;
+
+        }
+
+        .pass>input {
+
+            margin: 5px;
+            background-color: #fff;
+            color: #1d2129;
+            height: 22px;
+            line-height: 16px;
+            vertical-align: middle;
+            border-radius: 6px;
+            background: none;
+            border: 0;
+            box-shadow: none;
+            float: left;
+            font-size: 17px;
+            padding: 0;
+            width: 300px;
+            font-family: inherit;
+        }
+
+        .pass {
+            margin: 5px;
+            padding: 10px 16px;
+            border: 1px solid #dddfe2;
+            height: 50px;
+            border-radius: 6px;
+        }
+
+
+        .bottonlogin>button {
+
+            display: inline-block;
+            box-sizing: content-box;
+            font-weight: bold;
+            justify-content: center;
+            position: relative;
+            text-align: center;
+            vertical-align: middle;
+            color: #fff;
+            background-color: #1877f2;
+            border-radius: 6px;
+            font-size: 20px;
+            line-height: 48px;
+            padding: 0 16px;
+            width: 332px;
+            font-family: inherit;
+        }
+
+        .Forgot {
+            margin: 15px;
+
+            a:link,
+            a:visited {
+                text-decoration: none;
+            }
+
+            a:hover,
+            a:active {
+                text-decoration: underline;
+            }
+
+        }
+
+        .line {
+
+            line-height: 1.34;
+            border-bottom: 1px solid #dadde1;
+            display: flex;
+            margin: 20px 16px;
+
+        }
+
+        .cc {
+
+            margin-top: 28px;
+            text-align: center;
+            padding-top: 0;
+            font-size: 14px;
+
+            a:link,
+            a:visited {
+                text-decoration: none;
+                font-weight: bold;
+                color: #000;
+            }
+
+            a:hover,
+            a:active {
+                text-decoration: underline;
+                font-weight: bold;
+            }
+
+        }
+
+
+        .R1> {
+            color: #1c1e21;
+            direction: ltr;
+            line-height: 1.34;
+            font-size: 12px;
+            text-align: center;
+            padding-top: 6px;
+            font-family: inherit;
+        }
+
+        .cbot {
+
+            a:link,
+            a:visited {
+                background-color: #42b72a;
+                color: white;
+                padding: 14px 25px;
+                border-radius: 6px;
+                font-size: 17px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-weight: bold;
+            }
+
+            a:hover,
+            a:active {
+                background-color: #389c24;
+            }
+
+
+        }
+
+
+        footer {
+            /* margin: 0 50px 0 50px; */
+            display: flex;
+            align-items: center;
+
+            flex-flow: column;
+            background-color: white;
+            height: 20vh;
+
+
+
+        }
+
+        footer>* {
+            width: auto;
+            /* outline: 1px dashed #ff0095; */
+        }
+
+        .foot {
+            padding: 20px 0;
+            width: 980px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            order: 55%;
+
+        }
+
+        .foot2 {
+            display: flex;
+            width: 980px;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+
+        .foot2>* {
+            flex: 1;
+            flex-wrap: wrap;
+        }
+
+        .eng {
+
+            /* padding: 20px 450px 0; */
+            font-size: 12px;
+            flex-grow: .1;
+            display: flex;
+
+            align-self: first baseline;
+
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+
+            }
+
+            li {
+
+                float: left;
+
+            }
+
+            li a {
+                display: inline;
+
+                padding: 10px;
+                color: gray;
+
+                text-decoration: none;
+            }
+
+        }
+
+        .memu {
+
+
+            /* padding: 20px 450px 0; */
+            font-size: 12px;
+            flex-grow: .1;
+            display: flex;
+            flex-wrap: wrap;
+            align-self: first baseline;
+            justify-content: space-around;
+
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+
+            }
+
+            li {
+                float: left;
+            }
+
+            li a {
+                display: inline;
+                padding: 12px;
+                color: gray;
+
+                text-decoration: none;
+            }
+
+            @media (max-width: 700px) 
+            {
+
+                .foot,
+                .foot2 {
+                    
+                    background-color: #000;
+                }
+            }
+
+            /* @media (max-width: 980px) {
+                .foot {
+                    background-color: #000;
+                    width:100%;
+             
+                }
+
+                .foot2 {
+                    width: 100%;
+                }
+                               
+            } */
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <main>
+        <div class="F1">
+            <div class="F2" ">
+
+                <div class=" main-L">
+
+                <img src="./imghomework/Feacbook.svg " alt="">
+
+                <h2>
+                    Facebook helps you connect and share
+                    with the people in your life.
+                </h2>
+            </div>
+
+
+            <div class="main-R">
+                <div class="R1">
+
+                    <div class="R2">
+                        <div class="inputbox">
+                            <div class="inputUser">
+                                <div class="email">
+                                    <input type="text" name="email" placeholder="Email address or phone number"
+                                        autofocus="1" aria-label="Email address or phone number">
+                                </div>
+                                <div class="pass">
+                                    <input type="password" name="pass" placeholder="Password" aria-label="Password">
+                                </div>
+                            </div>
+                            <div class="bottonlogin">
+                                <button value="1" name="login" data-testid="royal_login_button" type="submit">Log
+                                    in</button>
+                            </div>
+
+                        </div>
+                        <div class="Forgot">
+                            <a href="">Forgotten password?</a>
+                        </div>
+
+                        <div class="line">
+
+                        </div>
+
+                        <div class="cbot">
+                            <a href="default.asp" target="_blank">Create new account</a>
+
+
+                        </div>
+                    </div>
+                    <div class="cc">
+                        <P>
+                            <a href="">Create a Page</a> for a celebrity, brand or business.
+                        </P>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+
+
+        </div>
+        </div>
+    </main>
+
+
+    <footer>
+        <div class="foot">
+            <div class="foot2">
+                <div class="eng">
+                    <ul>
+
+                        <li><a href="#home">English(UK)</a></li>
+                        <li><a href="item002">ภาษาไทย</a></li>
+                        <li><a href="item003">日本語</li>
+                        <li><a href="item004">中文(简体)</a></li>
+                        <li><a href="item005">Tiếng Việt</a></li>
+                        <li><a href="item006">Français (France)</a></li>
+                        <li><a href="item007">Deutsch</a></li>
+                        <li><a href="item008">Русский</a></li>
+                        <li><a href="item009">Español</a></li>
+                        <li><a href="item010">Português (Brasil)</a></li>
+                        <li><a href="item011">Italiano</a></li>
+                        <li> <a role="button" href="#"></a></li>
+
+
+
+                    </ul>
+                </div>
+
+                <div class="line" style="width: 100%;margin: 0;"></div>
+
+                <div class="memu">
+                    <ul>
+                        <li><a href="/reg/">Sign Up</a></li>
+                        <li><a href="/login/" title="Log in to Facebook">Log in</a></li>
+                        <li><a href="https://messenger.com/" title="Take a look at Messenger.">Messenger</a></li>
+                        <li><a href="/lite/" title="Facebook Lite for Android.">Facebook Lite</a></li>
+                        <li><a href="https://www.facebook.com/watch/" title="Browse in Video">Video</a></li>
+                        <li><a href="/places/" title="Take a look at popular places on Facebook.">Places</a></li>
+                        <li><a href="/games/" title="Check out Facebook games.">Games</a></li>
+                        <li><a href="/marketplace/" title="Buy and sell on Facebook Marketplace.">Marketplace</a></li>
+                        <li><a href="https://pay.facebook.com/" title="Learn more about Meta Pay" target="_blank">Meta
+                                Pay</a>
+                        </li>
+                        <li><a href="https://www.meta.com/" title="Discover Meta" target="_blank">Meta Store</a></li>
+                        <li><a href="https://www.meta.com/quest/" title="Learn more about Meta Quest"
+                                target="_blank">Meta
+                                Quest</a></li>
+                        <li><a href="https://www.instagram.com/" title="Take a look at Instagram" target="_blank"
+                                rel="noreferrer nofollow" data-lynx-mode="asynclazy"
+                                data-lynx-uri="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2F&amp;h=AT36OBZ38NsOG4SBk_k7sK0JK66EwwVycHhIXW2peCEGGfhfzQpo3ZGKEciYRzmJ320-vIvwKJ2dASoRzVdR8ySgd0c9CXf3RHVk1yeiRkyKHGtSbaNZP-iZrnWbau7ZlcRoCYNfegdWGKWp3VvaIw">Instagram</a>
+                        </li>
+                        <li><a href="https://www.threads.net/" title="Check out Threads">Threads</a></li>
+                        <li><a href="/fundraisers/" title="Donate to worthy causes.">Fundraisers</a></li>
+                        <li><a href="/biz/directory/" title="Browse our Facebook Services directory.">Services</a></li>
+                        <li><a href="/votinginformationcenter/?entry_point=c2l0ZQ%3D%3D"
+                                title="See the Voting Information Centre">Voting Information Centre</a></li>
+                        <li><a href="/privacy/policy/?entry_point=facebook_page_footer"
+                                title="Learn how we collect, use and share information to support Facebook.">Privacy
+                                Policy</a>
+                        </li>
+                        <li><a href="/privacy/center/?entry_point=facebook_page_footer"
+                                title="Learn how to manage and control your privacy on Facebook.">Privacy Centre</a>
+                        </li>
+                        <li><a href="/groups/discover/" title="Explore our groups.">Groups</a></li>
+                        <li><a href="https://about.meta.com/" accesskey="8"
+                                title="Read our blog, discover the resource centre and find job opportunities.">About</a>
+                        </li>
+                        <li><a href="/ad_campaign/landing.php?placement=pflo&amp;campaign_id=402047449186&amp;nav_source=unknown&amp;extra_1=auto"
+                                title="Advertise on Facebook">Create ad</a></li>
+                        <li><a href="/pages/create/?ref_type=site_footer" title="Create a Page">Create Page</a></li>
+                        <li><a href="https://developers.facebook.com/?ref=pf"
+                                title="Develop on our platform.">Developers</a>
+                        </li>
+                        <li><a href="/careers/?ref=pf"
+                                title="Make your next career move to our brilliant company.">Careers</a>
+                        </li>
+                        <li><a href="/policies/cookies/" title="Learn about cookies and Facebook."
+                                data-nocookies="1">Cookies</a></li>
+                        <li><a class="_41ug" data-nocookies="1" href="https://www.facebook.com/help/568137493302217"
+                                title="Learn about AdChoices.">AdChoices<i class="img sp_EP9wX8qDDvu sx_6bdd81"></i></a>
+                        </li>
+                        <li><a data-nocookies="1" href="/policies?ref=pf" accesskey="9"
+                                title="Review our terms and policies.">Terms</a></li>
+                        <li><a href="/help/?ref=pf" accesskey="0" title="Visit our Help Centre.">Help</a></li>
+                        <li><a href="help/637205020878504"
+                                title="Visit our contact uploading and non-users notice.">Contact
+                                uploading and non-users</a></li>
+                        <li><a accesskey="6" class="accessible_elem" href="/settings"
+                                title="View and edit your Facebook settings.">Settings</a></li>
+                        <li><a accesskey="7" class="accessible_elem"
+                                href="/allactivity?privacy_source=activity_log_top_menu"
+                                title="View your activity log">Activity log</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
